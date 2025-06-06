@@ -1,0 +1,1849 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>BaronBeyi | Premium Bahis Rehberi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+    --primary: #0a0a0a;
+    --secondary: #121212;
+    --accent: #9d00ff;
+    --accent-dark: #7d00cc; 
+    --accent-alt: #5b65ff;
+    --text: #ffffff;
+    --text-light: #b0b0b0;
+    --card-bg: rgba(30, 30, 30, 0.6);
+    --glass: rgba(255, 255, 255, 0.05);
+    --menu-bg: rgba(15, 15, 15, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text);
+    background-image: 
+        radial-gradient(at 80% 20%, rgba(157, 0, 255, 0.15) 0px, transparent 50%),
+        radial-gradient(at 20% 80%, rgba(91, 101, 255, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(135, 0, 255, 0.08) 0px, transparent 70%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+/* Logo */
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    mix-blend-mode: screen;
+    text-decoration: none;
+}
+
+.logo span {
+    display: inline-block;
+    background: linear-gradient(to right, var(--accent), var(--accent-alt));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.7; filter: brightness(1.2); }
+    100% { opacity: 1; filter: brightness(1); }
+}
+
+/* Navigation - MOBİL MENÜ DÜZENLEMELERİ BU KISIMDA */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s;
+    backdrop-filter: blur(0px);
+}
+
+.navbar.scrolled {
+    background: var(--menu-bg);
+    padding: 15px 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s;
+}
+
+
+.close-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text);
+    z-index: 1001;
+    transition: all 0.3s;
+}
+
+.close-menu:hover {
+    color: var(--accent);
+    transform: rotate(90deg);
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 30px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards 0.3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, var(--accent), var(--accent-alt));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(157, 0, 255, 0.3);
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 18px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(157, 0, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button i {
+    margin-right: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--accent-dark), var(--accent-alt));
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(157, 0, 255, 0.4);
+}
+
+.cta-button:hover::before {
+    opacity: 1;
+}
+
+/* Sections */
+.section {
+    padding: 120px 0;
+    position: relative;
+}
+
+.section-title {
+    margin-bottom: 60px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s;
+}
+
+.section-title.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to right, var(--text), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+.section-title p {
+    color: var(--text-light);
+    font-size: 18px;
+    max-width: 600px;
+}
+
+/* Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s;
+}
+
+.card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(157, 0, 255, 0.1) 0%, rgba(91, 101, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(157, 0, 255, 0.3);
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.card-description {
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    display: inline-flex;
+    align-items: center;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-button i {
+    margin-left: 8px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.card-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, var(--accent-dark), var(--accent-alt));
+    transition: width 0.3s;
+    z-index: 1;
+}
+
+.card-button:hover::before {
+    width: 100%;
+}
+
+.card-button:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(157, 0, 255, 0.3);
+}
+
+/* Floating Elements */
+.floating {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.6;
+}
+
+.floating-1 {
+    top: 15%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    animation: float 15s ease-in-out infinite;
+}
+
+.floating-2 {
+    bottom: 15%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-alt) 0%, transparent 70%);
+    animation: float 18s ease-in-out infinite reverse;
+}
+
+.floating-3 {
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(156, 0, 255, 0.5) 0%, transparent 70%);
+    animation: float 12s ease-in-out infinite 2s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -50px) rotate(5deg); }
+    66% { transform: translate(-30px, 20px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleAnimation linear infinite;
+}
+
+@keyframes particleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(0) translateX(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(calc(-100vh - 100px)) translateX(var(--tx));
+    }
+}
+
+/* Explosion Animation */
+.explosion {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.explosion-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: explode 0.8s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(0);
+    }
+}
+
+/* Stats */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.stat-item {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass);
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.stat-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--accent), var(--accent-alt));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Testimonials */
+.testimonials {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 50px;
+}
+
+.testimonials::-webkit-scrollbar {
+    height: 6px;
+}
+
+.testimonial {
+    flex: 0 0 auto;
+    width: 350px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass);
+    scroll-snap-align: start;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s;
+}
+
+.testimonial.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimonial-text::before {
+    content: '"';
+    font-size: 60px;
+    color: var(--accent);
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    opacity: 0.3;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.testimonial-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-author-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.testimonial-author-info p {
+    font-size: 14px;
+    color: var(--accent);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(157, 0, 255, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: var(--accent-dark);
+}
+
+/* Contact Floating */
+.contact-floating {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.contact-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9d00ff, #5b65ff);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(157, 0, 255, 0.3);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.contact-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(157, 0, 255, 0.4);
+}
+
+.contact-popup {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(157, 0, 255, 0.2);
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 150px;
+}
+
+.contact-floating:hover .contact-popup,
+.contact-popup:hover {
+    display: flex;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.contact-item:hover {
+    background: rgba(157, 0, 255, 0.2);
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.contact-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Card Hover Effects */
+.card:hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        rgba(157, 0, 255, 0.1) 25%,
+        transparent 50%,
+        rgba(91, 101, 255, 0.1) 75%,
+        transparent 100%
+    );
+    animation: casinoLight 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes casinoLight {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes coinExplosion {
+    to {
+        transform: translate(var(--x), var(--y)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Section Title Effects */
+.section-title h2 {
+    position: relative;
+    text-shadow: 0 0 10px #9d00ff, 
+                 0 0 20px #9d00ff, 
+                 0 0 30px #5b65ff;
+    animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 10px #9d00ff, 
+                     0 0 20px #9d00ff, 
+                     0 0 30px #5b65ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+@keyframes fallingCoin {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--end-x), 100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Optimizations */
+.card, .navbar, .cta-button, .card-button {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+}
+
+.particle {
+    will-change: transform, opacity;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 60px;
+    }
+    
+    .section-title h2 {
+        font-size: 36px;
+    }
+    
+    .stat-number {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+    
+    .navbar.scrolled {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--menu-bg);
+        flex-direction: column;
+        padding: 80px 30px;
+        transition: right 0.3s ease-in-out;
+        backdrop-filter: blur(20px);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        right: 0;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        position: relative;
+    }
+    
+    .mobile-menu-btn.active {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .close-menu {
+        display: block;
+        position: fixed;
+        top: 25px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--text);
+        z-index: 1002;
+        transition: all 0.3s;
+    }
+
+    .close-menu:hover {
+        color: var(--accent);
+        transform: rotate(90deg);
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .section-title h2 {
+        font-size: 32px;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .cta-button {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial {
+        width: 85vw;
+    }
+    
+    .nav-links {
+        width: 85%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="floating floating-1"></div>
+    <div class="floating floating-2"></div>
+    <div class="floating floating-3"></div>
+    
+    <!-- Menu -->
+    <nav class="navbar">
+        <a href="#" class="logo">BARON<span>BEYI</span></a>
+        <div class="nav-links">
+            <a href="#vip-deneyimler" class="nav-link">VIP Sponsorlar</a>
+            <a href="#ozel-secimler" class="nav-link">Özel Sponsorlar</a>
+            <a href="#guvenilir-secimler" class="nav-link">Güvenilir Sponsorlar</a>
+            <a href="#istatistikler" class="nav-link">İstatistikler</a>
+            <a href="#yorumlar" class="nav-link">Kullanıcı Yorumları</a>
+            <span class="close-menu"><i class="fas fa-times"></i></span>
+        </div>
+        <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </nav>
+    
+    <div id="top" class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bahisin Ultra Premium Rehberi</h1>
+                <p>En güvenilir bahis siteleri, en yüksek bonuslar ve özel promosyonlar tek bir yerde. BaronBeyi farkıyla bahis deneyiminizi üst seviyeye taşıyın.</p>
+                <button class="cta-button" id="explode-btn"><i class="fas fa-arrow-down"></i> Keşfetmeye Başla</button>
+            </div>
+            
+        </section>
+
+
+        <!-- VIP BOLUMU-->
+        <section id="vip-deneyimler" class="section">
+            <div class="section-title">
+                <h2>VIP Sponsorlar</h2>
+                <p>Yüksek limitli oyunlar ve özel VIP hizmetleri sunan seçkin bahis siteleri</p>
+            </div>
+            
+            <div class="cards-grid">
+                <!-- Site 1 -->
+                <div class="card" data-delay="0">
+                    <div class="card-badge">LIMITLESS</div>
+                    <div class="card-image">
+                        <img src="12jojova.jpg" alt="JOJOVA">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">JOJOVA</h3>
+                        <p class="card-description">Sınırsız Çekim - %25 Kripto Özel Slot/ Spor alanında Çevrimsiz Bonus - Anlık %20 + Aylık %5 Kayıp Bonusu - Otomatik VİP Ayrıcalık Sistemi.</p>
+                        <a href="https://cutt.ly/TrzZC51w" target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Site 2 -->
+                <div class="card" data-delay="100">
+                    <div class="card-badge">VİP2</div>
+                    <div class="card-image">
+                        <img src="12TRWİN.jpeg" alt="TRWİN">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">TRWİN</h3>
+                        <p class="card-description">500TL DENEME BONUSU / %100 SPOR/CASİNO HOŞGELDİN BONUSU / ANLIK KAYIO BONUSU / HER YATIRIMA BONUS FIRSATI.</p>
+                        <a href="https://www.17aff.com/?aff=10523" target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Site 3 -->
+                <div class="card" data-delay="200">
+                    <div class="card-badge">VİP3</div>
+                    <div class="card-image">
+                        <img src="12savoy.jpg" alt="SAVOYCASİNO">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">SAVOYCASİNO</h3>
+                        <p class="card-description">500 TL DENEME BONUSU / %100 SPOR VE CASİNO HOŞ GELDİN BONUSU / %100 HAFTA SONU YATIRIM BONUSU / %25 GECE DİSCOUNT / DOUBLE %10 YATIRIM + KAYIP BONUSU.</p>
+                        <a href="https://tinyurl.com/SavoyCasinoPick" target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Site 4 -->
+                <div class="card" data-delay="100">
+                    <div class="card-badge">VİP4</div>
+                    <div class="card-image">
+                        <img src="betamaıl.jpg" alt="BETAVERSE">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BETAVERSE</h3>
+                        <p class="card-description">BETAMAİL KODUNU GİR 200 TL NAKİT KAZAN. MİNUMUM 100TL MAXİMUM 750 TL ÇEKİM YAPABİLİRSİN.</p>
+                        <a href="https://bverseads3.com/affiliates/?btag=2399093" target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Site 5 -->
+                <div class="card" data-delay="100">
+                    <div class="card-badge">VİP5</div>
+                    <div class="card-image">
+                        <img src="coolmail.jpg" alt="BETCOOL">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BETCOOL</h3>
+                        <p class="card-description">COOLMAİL KODUNU GİR 200 TL NAKİT KAZAN. MİNUMUM 100TL MAXİMUM 750 TL ÇEKİM YAPABİLİRSİN.</p>
+                        <a href="https://coolads5.com/affiliates/?btag=2399089" target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Site 6 -->
+                <div class="card" data-delay="100">
+                    <div class="card-badge">VİP6</div>
+                    <div class="card-image">
+                        <img src="southmail.jpg" alt="SOUTHBET">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">SOUTHBET</h3>
+                        <p class="card-description">SOUTHMAİL KODUNU GİR 200 TL NAKİT KAZAN. MİNUMUM 100TL MAXİMUM 750 TL ÇEKİM YAPABİLİRSİN.</p>
+                        <a href="https://www.sbguncel.com/affiliates/?btag=2399090" target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="200">
+                    <div class="card-badge">VİP7</div>
+                    <div class="card-image">
+                        <img src="123strong.jpg" alt="BETSTRONG">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BETSTRONG</h3>
+                        <p class="card-description">pickstrong KODUNU GİR 200 TL NAKİT KAZAN. MİNUMUM 100TL MAXİMUM 750 TL ÇEKİM YAPABİLİRSİN.</p>
+                        <a href="https://betstrong1.com/affiliates/?btag=2389488" target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+                
+            </div> <!--buraya kadar ekle kodu-->
+        </section>
+
+        
+        <!-- Ozel Sponsor BOLUMU-->
+
+        <section id="ozel-secimler" class="section">
+            <div class="section-title">
+                <h2>Özel Sponsorlar</h2>
+                <p>BaronBeyi ekibi tarafından özenle seçilmiş premium bahis deneyimleri</p>
+            </div>
+            
+            <div class="cards-grid">
+
+                <!-- Site 1 -->
+                <div class="card" data-delay="0">
+                    <div class="card-badge">PREMIUM</div>
+                    <div class="card-image">
+                        <img src="12juve.jpg" alt="BETJUVE">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BETJUVE</h3>
+                        <p class="card-description">KOD : BETJUVEMAIL KODU GİR 100 FREESPİN 2TL BETTEN KAZAN SADECE LİNK ÜYELERİNE ÖZEL.</p>
+                        <a href="https://betjuve.vip/2386503"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="0">
+                    <div class="card-badge">PREMIUM2</div>
+                    <div class="card-image">
+                        <img src="123ceda.png" alt="CEDABET">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">CEDABET</h3>
+                        <p class="card-description">CEDABET - 250 TL ÇEVRİMSİZ DENEME BONUSU / %100 HOŞGELDİN  BONUSU / %20 ANLIK KAYIP BONUSU / AYLIK VE HAFTALIK KAYIP BONUSU.</p>
+                        <a href="https://affcedabet.com/?modal=register&ref=casinopick"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="0">
+                    <div class="card-badge">PREMIUM3</div>
+                    <div class="card-image">
+                        <img src="12sb.jpg" alt="SUPERBETİN">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">SUPERBETİN</h3>
+                        <p class="card-description">SB1000 KODUNU GİR 1000 TL DENEME BONUSU / HER GÜN %50 SPOR YATIRIM BONUSU / HERGÜN 250.000 TL TURNUVA ÖDÜLÜ.</p>
+                        <a href="https://bit.ly/Sbetin-Giris"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="0">
+                    <div class="card-badge">PREMIUM4</div>
+                    <div class="card-image">
+                        <img src="123tito.png" alt="TİTOBET">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">TİTOBET</h3>
+                        <p class="card-description">TİTOBET - 999 FREESPİN DENEME BONUSU / %100 SPOR-CASİNO HOŞGELDİN BONUSU / %25 ANLIK KAYIP BONUSU /TOPLAMDA %15 AYLIK VE HAFTALIK KAYIP BONUSU.</p>
+                        <a href="https://tito.li/zsPDZ"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="0">
+                    <div class="card-badge">PREMIUM5</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="0">
+                    <div class="card-badge">EXCLUSIVE</div>
+                    <div class="card-image">
+                            <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="0">
+                    <div class="card-badge">EXCLUSIVE2</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Site 2 -->
+                <div class="card" data-delay="100">
+                    <div class="card-badge">EXCLUSIVE3</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Site 3 -->
+                <div class="card" data-delay="200">
+                    <div class="card-badge">EXCLUSIVE4</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+  <div class="card" data-delay="100">
+                    <div class="card-badge">EXCLUSIVE5</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+        </section>
+
+        <!--GUVENILIR BOLUMU-->
+
+        <section id="guvenilir-secimler" class="section">
+            <div class="section-title">
+                <h2>Güvenilir Sponsorlar</h2>
+                <p>Güvenli oyunlar ve özel hizmetleri sunan seçkin bahis siteleri</p>
+            </div>
+            
+            <div class="cards-grid">
+                
+                <!-- Site 1 -->
+                <div class="card" data-delay="0">
+                    <div class="card-badge">GLOBAL</div>
+                    <div class="card-image">
+                        <img src="YONER1.jpg" alt="BETYONER">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BETYONER</h3>
+                        <p class="card-description">KOD : PİRLOYNR KODUNU GİR 250 TL YAP DİREKT ÇEKİM VER.</p>
+                        <a href="https://affbetyoner.com/?modal=register&ref=pirlopick"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Site 2 -->
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL2</div>
+                    <div class="card-image">
+                        <img src="inagaming1.jpg" alt="İNAGAMİNG">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">İNAGAMİNG</h3>
+                        <p class="card-description">GLOBAL SPONSOR - INAGAMING - %25 KAYIP BONUSU ÇEKİM LİMİTİ YOK - TEK MAÇTAN YATMAK YOK.</p>
+                        <a href="https://inagaming.biz/?btag=791285"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Site 3 -->
+                <div class="card" data-delay="200">
+                    <div class="card-badge">GLOBAL3</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+             <!-- Site 4 -->
+<div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL4</div>
+                    <div class="card-image">
+                        <img src="KOLİK1.jpg" alt="BETKOLİK">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BETKOLİK</h3>
+                        <p class="card-description">2500 TL ÇEKİLEBİLİR DENEME BONUSU / %100 HOŞGELDİN BONUSLARI % 25'E VARAN ANLIK KAYIP BONUSU.</p>
+                        <a href="https://kolikortaklik1.com/links/?btag=1733646"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            <!-- Site 5 -->  
+<div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL5</div>
+                    <div class="card-image">
+                        <img src="SMART1.jpeg" alt="SMARTBAHİS">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">SMARTBAHİS</h3>
+                        <p class="card-description">2500 TL ÇEKİLEBİLİR DENEME BONUSU / %100 HOŞGELDİN BONUSLARI % 25'E VARAN ANLIK KAYIP BONUSU.</p>
+                        <a href="https://smartortaklik3.com/links/?btag=2281164"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+    
+           <!-- Site 6 -->
+<div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL6</div>
+                    <div class="card-image">
+                        <img src="ULTRA1.jpg" alt="ULTRABET">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">ULTRABET</h3>
+                        <p class="card-description">2500 TL ÇEKİLEBİLİR DENEME BONUSU / %100 HOŞGELDİN BONUSLARI % 25'E VARAN ANLIK KAYIP BONUSU.</p>
+                        <a href="https://www.ultraortaklik6.com/links/?btag=2281163"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+        <!-- Site 7 -->
+<div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL7</div>
+                    <div class="card-image">
+                        <img src="SETRA1.jpg" alt="SETRABET">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">SETRABET</h3>
+                        <p class="card-description">2500 TL ÇEKİLEBİLİR DENEME BONUSU / %100 HOŞGELDİN BONUSLARI % 25'E VARAN ANLIK KAYIP BONUSU.</p>
+                        <a href="https://setraortaklik1.com/links/?btag=2281167"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL8</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL9</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL10</div>
+                    <div class="card-image">
+                        <img src="THE1.jpg" alt="THEBET">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">THEBET</h3>
+                        <p class="card-description">İLK YATIRIMINA %50 KAYIP BONUSU / HAFTALIK %10 NAKİT İADE / %30 ANLIK GECE DİSCOUNT / HER GÜN %50 ÇEVRİMSİZ YATIRIM BONUSU.</p>
+                        <a href="https://t.ly/vipthebetpick"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL11</div>
+                    <div class="card-image">
+                        <img src="12ix.jpg" alt="1000XBET">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">1000XBET</h3>
+                        <p class="card-description">%100 HOŞGELDİN CASİNO VE SPOR BONUSU / %100 FREESPİN-FREEBET YATIRIM BONUSU / %35 GECE KAYIP BONUSU % 10 HAFTALIK KAYIP BONUSU.</p>
+                        <a href="https://t.ly/1000xbetaff?btag=91919191"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL12</div>
+                    <div class="card-image">
+                        <img src="12by.jpg" alt="BYCASİNO">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">BYCASİNO</h3>
+                        <p class="card-description">750₺ DENEME BONUSU YATIRIM ŞARTSIZ! / HER GÜN %300 CASİNO BONUSU / %100 HER GÜN SLOT BONUSU / %50 KAYIP BONUSU.</p>
+                        <a href="https://cutt.ly/2w2W6lj4"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL13</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL14</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-delay="100">
+                    <div class="card-badge">GLOBAL15</div>
+                    <div class="card-image">
+                        <img src="REKLAM.jpg" alt="REKLAM ALANI">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">REKLAM ALANI</h3>
+                        <p class="card-description">REKLAM VERMEK İÇİN BİZE ULAŞABİLİRSİNİZ.</p>
+                        <a href="https://t.me/pirlobaskan"target="_blank" class="card-button">Hemen Katıl <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+
+
+          </div> <!--buraya kadar ekle kodu-->
+        </section>
+        
+        <!-- Statistics Section -->
+        <section id="istatistikler" class="section">
+            <div class="section-title">
+                <h2>İstatistikler</h2>
+                <p>Premium bahis deneyiminde rakamlarla BaronBeyi farkı</p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item" data-delay="0">
+                    <div class="stat-number" data-count="165427">0</div>
+                    <div class="stat-label">Ziyaretçi sayı</div>
+                </div>
+                <div class="stat-item" data-delay="100">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">Memnun Müşteri (%)</div>
+                </div>
+                <div class="stat-item" data-delay="200">
+                    <div class="stat-number" data-count="11">0</div>
+                    <div class="stat-label">Yıllık Tecrübe</div>
+                </div>
+                <div class="stat-item" data-delay="300">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">Saat Destek</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="yorumlar" class="section">
+            <div class="section-title">
+                <h2>Kullanıcı Yorumları</h2>
+                <p>BaronBeyi tavsiyelerini takip eden kullanıcıların deneyimleri</p>
+            </div>
+            
+            <div class="testimonials">
+                <div class="testimonial" data-delay="0">
+                    <div class="testimonial-text">
+                        BaronBeyi sayesinde artık sadece güvenilir sitelerde oynuyorum. Önerilen sitelerde hiçbir ödeme sorunu yaşamadım ve bonuslar gerçekten harika!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Avatar">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Ahmet K.</h4>
+                            <p>Premium Üye</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" data-delay="100">
+                    <div class="testimonial-text">
+                        VIP tavsiyeleri gerçekten değerli. Önerilen sitelerin sunduğu ekstra hizmetler sayesinde oyun deneyimim tamamen değişti. Teşekkürler BaronBeyi!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Avatar">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Mehmet S.</h4>
+                            <p>VIP Üye</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" data-delay="200">
+                    <div class="testimonial-text">
+                        3 yıldır BaronBeyi'nin tavsiyelerini takip ediyorum. Şimdiye kadar hiç hayal kırıklığına uğramadım. En güvenilir bahis rehberi!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="Avatar">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Ayşe Y.</h4>
+                            <p>Gold Üye</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial" data-delay="300">
+                    <div class="testimonial-text">
+                        Özel bonuslar ve promosyonlar için tek adresim burası. Hızlı çekim yapılan siteleri bulmanın en kolay yolu BaronBeyi rehberi.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Avatar">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Burak T.</h4>
+                            <p>Elite Üye</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <div class="explosion" id="explosion"></div>
+
+    <div class="contact-floating">
+        <button class="contact-button">
+          <i class="fas fa-comment-dots"></i>
+        </button>
+        <div class="contact-popup">
+          <a href="https://t.me/pirlobaskan" target="_blank" class="contact-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+            <span>Telegram</span>
+          </a>
+          <a href="https://teams.live.com/l/invite/FEA9Pxt14V0AcNypwI" target="_blank" class="contact-item">
+            <img src="https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/teams_48x1.svg" alt="Teams">
+            <span>Teams</span>
+          </a>
+          <a href="mailto:baronnbeyi@gmail.com" class="contact-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail">
+            <span>E-posta</span>
+          </a>
+        </div>
+      </div>
+
+    <script>
+        // MOBİL MENÜ KONTROLLERİ (YENİ)
+        const menu = {
+    init: function() {
+        this.closeBtn = document.querySelector('.close-menu');
+        this.menuBtn = document.querySelector('.mobile-menu-btn');
+        this.navLinks = document.querySelector('.nav-links');
+        this.navItems = document.querySelectorAll('.nav-links .nav-link');
+        
+        this.menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleMenu(true);
+        });
+        
+        this.closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleMenu(false);
+        });
+        
+        this.navItems.forEach(item => {
+            item.addEventListener('click', () => this.toggleMenu(false));
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!this.navLinks.contains(e.target) && e.target !== this.menuBtn) {
+                this.toggleMenu(false);
+            }
+        });
+    },
+    
+    toggleMenu: function(show) {
+        this.navLinks.classList.toggle('active', show);
+        this.menuBtn.classList.toggle('active', show);
+        document.body.classList.toggle('menu-open', show);
+        
+        if (show) {
+            this.closeBtn.style.display = 'block';
+        } else {
+            setTimeout(() => {
+                this.closeBtn.style.display = 'none';
+            }, 300);
+        }
+    }
+};
+
+// TÜM DİĞER JS KODLARI (ORJİNAL HALİYLE)
+document.addEventListener('DOMContentLoaded', function() {
+    // Menüyü başlat
+    menu.init();
+    
+    // Scroll efekti
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        const backToTop = document.querySelector('.back-to-top');
+        
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        backToTop.classList.toggle('visible', window.scrollY > 500);
+        
+        animateOnScroll();
+    });
+    
+    // Back to top butonu
+    document.querySelector('.back-to-top')?.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // CTA butonu
+    document.querySelector('.cta-button')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        createExplosion(e);
+        setTimeout(() => {
+            document.getElementById('vip-deneyimler').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 500);
+    });
+    
+    // Kart hover efektleri
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const x = e.clientX - card.getBoundingClientRect().left;
+            const y = e.clientY - card.getBoundingClientRect().top;
+            const centerX = card.offsetWidth / 2;
+            const centerY = card.offsetHeight / 2;
+            
+            card.style.transform = `perspective(1000px) rotateX(${(y - centerY) / 20}deg) rotateY(${(centerX - x) / 20}deg) translateY(-10px) scale(1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+    
+    // Animasyonlar
+    function animateOnScroll() {
+        document.querySelectorAll('.section-title, .card, .stat-item, .testimonial').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight / 1.2) {
+                setTimeout(() => {
+                    el.classList.add('animate');
+                }, el.getAttribute('data-delay') || 0);
+            }
+        });
+    }
+    
+    // İstatistik sayacı
+    document.querySelectorAll('.stat-number').forEach(el => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = +el.getAttribute('data-count');
+                    let current = 0;
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    
+                    const updateCounter = () => {
+                        if (current < target) {
+                            current += increment;
+                            el.textContent = Math.ceil(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            el.textContent = target;
+                        }
+                    };
+                    
+                    setTimeout(updateCounter, el.parentElement.getAttribute('data-delay') || 0);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(el);
+    });
+    
+    // Parçacık efekti
+    function createParticles() {
+        const container = document.getElementById('particles');
+        if (!container) return;
+        
+        for (let i = 0; i < 50; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.cssText = `
+                width: ${Math.random() * 3 + 1}px;
+                height: ${Math.random() * 3 + 1}px;
+                background: ${['#00ff9d', '#00e0ff', '#9c00ff'][Math.floor(Math.random() * 3)]};
+                left: ${Math.random() * window.innerWidth}px;
+                bottom: -${Math.random() * 3 + 1}px;
+                --tx: ${(Math.random() - 0.5) * 100}px;
+                animation-duration: ${Math.random() * 15 + 10}s;
+                animation-delay: ${Math.random() * 5}s;
+            `;
+            container.appendChild(particle);
+        }
+    }
+    
+    // Patlama efekti
+    function createExplosion(e) {
+        const explosion = document.getElementById('explosion');
+        if (!explosion) return;
+        
+        const rect = e.currentTarget.getBoundingClientRect();
+        explosion.style.cssText = `
+            left: ${rect.left + rect.width / 2}px;
+            top: ${rect.top + rect.height / 2}px;
+            opacity: 1;
+        `;
+        
+        explosion.innerHTML = '';
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'explosion-particle';
+            const size = Math.random() * 8 + 2;
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.random() * 100 + 50;
+            
+            particle.style.cssText = `
+                width: ${size}px;
+                height: ${size}px;
+                background: ${['#00ff9d', '#00e0ff', '#ffffff'][Math.floor(Math.random() * 3)]};
+                --tx: ${Math.cos(angle) * distance}px;
+                --ty: ${Math.sin(angle) * distance}px;
+            `;
+            explosion.appendChild(particle);
+        }
+        
+        setTimeout(() => explosion.style.opacity = '0', 1000);
+    }
+    
+    // Para efekti
+    document.querySelectorAll('.cta-button, .card-button').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const explosion = document.createElement('div');
+            explosion.style.cssText = `
+                position: absolute;
+                pointer-events: none;
+                left: ${e.currentTarget.getBoundingClientRect().left + e.currentTarget.offsetWidth/2}px;
+                top: ${e.currentTarget.getBoundingClientRect().top + e.currentTarget.offsetHeight/2}px;
+            `;
+            
+            for (let i = 0; i < 15; i++) {
+                const coin = document.createElement('div');
+                coin.innerHTML = '💰';
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 60 + Math.random() * 500;
+                
+                coin.style.cssText = `
+                    position: absolute;
+                    font-size: ${20 + Math.random()*15}px;
+                    --x: ${Math.cos(angle) * distance}px;
+                    --y: ${Math.sin(angle) * distance}px;
+                    animation: coinExplosion ${1+Math.random()}s forwards;
+                `;
+                explosion.appendChild(coin);
+            }
+            
+            document.body.appendChild(explosion);
+            setTimeout(() => explosion.remove(), 1000);
+        });
+    });
+    
+    // Contact popup
+    document.querySelector('.contact-button')?.addEventListener('click', function() {
+        const popup = document.querySelector('.contact-popup');
+        if (popup) popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.contact-floating') && document.querySelector('.contact-popup')) {
+            document.querySelector('.contact-popup').style.display = 'none';
+        }
+    });
+    
+    // Sayfa yüklendiğinde
+    createParticles();
+    animateOnScroll();
+    
+    // Boyut değiştiğinde
+    window.addEventListener('resize', () => {
+        const particles = document.getElementById('particles');
+        if (particles) particles.innerHTML = '';
+        createParticles();
+    });
+});
+    </script>
+</body>
+</html>
